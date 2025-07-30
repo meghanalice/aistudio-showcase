@@ -96,6 +96,7 @@ app.use('/api-proxy', async (req, res, next) => {
         // Set mandatory headers 
         outgoingHeaders['X-Goog-Api-Key'] = apiKey;
         outgoingHeaders['User-Agent'] = 'Applet-Proxy-Server/1.0'; // Identify your proxy
+        outgoingHeaders['Run'] = 'Run'; // Identify inference from Cloud Run
         
         // Handle Content-Type specifically based on method
         const requestMethod = req.method.toUpperCase();
